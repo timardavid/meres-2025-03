@@ -73,13 +73,23 @@
           </div>
         </div>
       </div>
+      <div class="mb-3">
+        <label for="photoUrl" class="form-label">Fénykép az ingatlanról</label>
+        <input
+          type="url"
+          class="form-control"
+          id="photoUrl"
+          placeholder="Adja meg a kép URL-jét"
+        />
+      </div>
     </div>
 
     <script>
-      window.onload = (event) => {
-        document.querySelector("#today").value = new Date()
-          .toISOString()
-          .split("T")[0];
+      window.onload = () => {
+        const dateInput = document.querySelector("#date");
+        if (dateInput) {
+          dateInput.value = new Date().toISOString().split("T")[0];
+        }
       };
     </script>
 
